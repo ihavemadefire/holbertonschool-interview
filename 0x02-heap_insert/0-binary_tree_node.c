@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * binary_tree_node
+ * binary_tree_node - binary tree node
  * @parent: Parent
  * @value: Value
  * Return: a pointer to the new node, or NULL on failure
@@ -22,7 +22,7 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	new->right = NULL;
 	/* If parent is null, start the tree */
 	if (parent == NULL)
-       	{
+	{
 		parent = new;
 		return (new);
 	}
