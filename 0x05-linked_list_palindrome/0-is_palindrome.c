@@ -30,8 +30,8 @@ int is_palindrome_rec(listint_t **left, listint_t *right)
 		return (1);
 
 	i = is_palindrome_rec(left, right->next);
-	if (i == 1)
-		return (1);
+	if (i == 0)
+		return (0);
 
 	j = (right->n == (*left)->n);
 
