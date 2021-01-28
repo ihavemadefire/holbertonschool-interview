@@ -24,6 +24,8 @@ for line in fileinput.input():
         counter = 0
         print("File size: {}".format(file_size))
         print("200: {}".format(stat_code['200']))
+        print("301: {}".format(stat_code['301']))
+        print("400: {}".format(stat_code['400']))
         print("401: {}".format(stat_code['401']))
         print("403: {}".format(stat_code['403']))
         print("404: {}".format(stat_code['404']))
