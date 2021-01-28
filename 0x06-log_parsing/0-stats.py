@@ -3,7 +3,16 @@ import fileinput
 
 file_size = 0
 
-stat_code = {"200": 0, "301":0, "400":0, "401":0, "403":0, "404":0, "405":0, "500":0}
+stat_code = {
+    "200": 0,
+    "301": 0,
+    "400": 0,
+    "401": 0,
+    "403": 0,
+    "404": 0,
+    "405": 0,
+    "500": 0
+    }
 counter = 0
 
 for line in fileinput.input():
@@ -13,9 +22,10 @@ for line in fileinput.input():
     counter += 1
     if counter == 9:
         counter = 0
-        print('File size: {}\n200: {}\n401: {}\n403: {}\n404: {}\n405: {}\n500: {}'.format(file_size, stat_code['200'],
-            stat_code['401'],
-            stat_code['403'],
-            stat_code['404'],
-            stat_code['405'],
-            stat_code['500']))
+        print("File size: {}".format(file_size))
+        print("200: {}".format(stat_code['200']))
+        print("401: {}".format(stat_code['401']))
+        print("403: {}".format(stat_code['403']))
+        print("404: {}".format(stat_code['404']))
+        print("405: {}".format(stat_code['405']))
+        print("500: {}".format(stat_code['500']))
