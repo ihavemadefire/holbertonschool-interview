@@ -19,8 +19,6 @@ for line in fileinput.input():
     line_split = line.split()
     if len(line_split) < 9:
         continue
-    if isinstance(line_split[-1], int):
-        continue
     file_size = file_size + int(line_split[8])
     if line_split[7] in stat_code.keys():
         stat_code[line_split[7]] = stat_code[line_split[7]] + 1
