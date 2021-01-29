@@ -18,9 +18,10 @@ counter = 0
 for line in fileinput.input():
     line_split = line.split()
     file_size = file_size + int(line_split[8])
+    print(line_split[8])
     stat_code[line_split[7]] = stat_code[line_split[7]] + 1
     counter += 1
-    if counter == 9:
+    if counter == 10:
         counter = 0
         print("File size: {}".format(file_size))
         if stat_code['200'] > 0:
