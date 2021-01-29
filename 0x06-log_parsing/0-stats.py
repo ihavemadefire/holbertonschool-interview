@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+'''DOCSTRING'''
 import fileinput
 
 file_size = 0
-
 stat_code = {
     "200": 0,
     "301": 0,
