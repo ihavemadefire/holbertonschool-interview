@@ -10,7 +10,6 @@ int check_cycle(listint_t *list)
 {
     listint_t *tortoise = list;
     listint_t *hare = list;
-
     
     while (hare != NULL || tortoise != NULL)
     {
