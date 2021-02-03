@@ -12,7 +12,7 @@ int check_cycle(listint_t *list)
     listint_t *hare = list;
 
     if (list == NULL)
-      return (0);
+      return (1);
     
     while (hare != NULL)
     {
