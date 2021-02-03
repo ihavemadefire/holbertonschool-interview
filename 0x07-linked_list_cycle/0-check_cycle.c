@@ -2,9 +2,9 @@
 #include "lists.h"
 
 /**
- * check_cycle -
+ * check_cycle - checks for cycle
  * @list - Points to head node of list
- * Return: 
+ * Return: returns 1 if the is a cycle and 0 is not 
  */
 int check_cycle(listint_t *list)
 {
