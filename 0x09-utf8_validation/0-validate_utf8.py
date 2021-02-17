@@ -3,4 +3,4 @@
 
 
 def validUTF8(data):
-    return False if max(data) >= 255 or min(data) <= 0 else True
+    return False if max(data) >= 192 or min(data) <= 0 else True
