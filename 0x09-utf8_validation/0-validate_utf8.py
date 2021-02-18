@@ -3,4 +3,16 @@
 
 
 def validUTF8(data):
-    return False if max(data) >= 192 or min(data) <= 0 else True
+    flag = 0
+
+    for i in data:
+        flat = i & 0b00000000000000000000000011111111
+        if (flat > 0 and flat < 192) or (flat > 193 and flat < 245):
+            flag += 0 
+        else:
+            flag += 1
+
+    if flag > 0:
+        return False
+    else:
+        return True
