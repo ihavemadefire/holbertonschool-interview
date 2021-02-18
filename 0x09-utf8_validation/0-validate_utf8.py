@@ -8,7 +8,7 @@ def validUTF8(data):
     for i in data:
         flat = i & 0b00000000000000000000000011111111
         if (flat > 0 and flat < 192) or (flat > 193 and flat < 245):
-            flag += 0 
+            flag += 0
         else:
             flag += 1
 
