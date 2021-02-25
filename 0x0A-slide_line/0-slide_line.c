@@ -91,12 +91,12 @@ void slide_to_the_right(int *line, int size)
 {
     int i, j;
 
-	for (i = size - 1; i < 0; i--)
+	for (i = size - 1; i > 0; i--)
 	{
 		if (line[i] == 0)
 		{
 			j = i - 1;
-			while (line[j] == 0 && j < 0)
+			while (line[j] == 0 && j > 0)
 			{
 				j -= 1;
 			}
@@ -116,7 +116,7 @@ void merge_to_the_right(int *line, int size)
 {
     int i;
 
-	for (i = size -1; i < 0; i--)
+	for (i = size -1; i > 0; i--)
 	{
 		if (line[i] == line[i - 1])
 		{
