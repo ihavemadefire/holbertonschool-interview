@@ -1,0 +1,11 @@
+#include "palindrome.h"
+
+/**
+ * is_palindrome -
+ *
+ * Return: 
+ */
+int is_palindrome(unsigned long n)
+{
+
+}
