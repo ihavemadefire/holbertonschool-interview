@@ -11,47 +11,45 @@
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-    skiplist_t *ret;
-    skiplist_t *exp;
+	skiplist_t *ret;
+	skiplist_t *exp;
 
-    if (list == NULL)
-        return NULL
-    exp = list;
-    ret = list;
-    while (ret->express != NULL && ret->next != NULL)
-    {            
-        if (ret->express->n > value)
-        {
-            // escape condition
-            exp = ret;
-            ret = ret->express;
-            printf("Value checked at index [%zu] = [%d]\n", ret->index, ret->n);
-            break;
-        }
-        else
-        {
-            // loop condition
-            exp = ret;
-            ret = ret->express;
-            printf("Value checked at index [%zu] = [%d]\n", ret->index, ret->n);
-        }
-    }
-    if (!(ret->n > value))
-    {
-        exp = ret;
-        while (ret->next != NULL)
-        {
-            ret =ret->next;
-        }
-    }
-    printf("Value found between indexes [%zu] and [%zu]\n", exp->index, ret->index);
-    while (exp->next != NULL && exp->n <= value)
-    {
-        printf("Value checked at index [%zu] = [%d]\n", exp->index, exp->n);
-        if (exp->n == value)
-            return exp;
-        exp = exp->next;
-    }
-    printf("Value checked at index [%zu] = [%d]\n", exp->index, exp->n);
-    return NULL;
+	if (list == NULL)
+		return NULL
+	exp = list;
+	ret = list;
+	while (ret->express != NULL && ret->next != NULL)
+	{            
+		if (ret->express->n > value)
+		{
+			exp = ret;
+			ret = ret->express;
+			printf("Value checked at index [%zu] = [%d]\n", ret->index, ret->n);
+			break;
+		}
+	else
+	{
+		exp = ret;
+		ret = ret->express;
+		printf("Value checked at index [%zu] = [%d]\n", ret->index, ret->n);
+	}
+	}
+	if (!(ret->n > value))
+	{
+		exp = ret;
+		while (ret->next != NULL)
+		{
+			ret =ret->next;
+		}
+	}
+	printf("Value found between indexes [%zu] and [%zu]\n", exp->index, ret->index);
+	while (exp->next != NULL && exp->n <= value)
+	{
+		printf("Value checked at index [%zu] = [%d]\n", exp->index, exp->n);
+		if (exp->n == value)
+			return exp;
+		exp = exp->next;
+	}
+	printf("Value checked at index [%zu] = [%d]\n", exp->index, exp->n);
+	return NULL;
 }
