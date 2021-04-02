@@ -46,7 +46,7 @@ skiplist_t *r, *e;
 	{
 		printf("Value checked at index [%zu] = [%d]\n", e->index, e->n);
 		if (e->n == value)
-			return (e);
+		{return (e);}
 		e = e->next;
 	}
 	printf("Value checked at index [%zu] = [%d]\n", e->index, e->n);
