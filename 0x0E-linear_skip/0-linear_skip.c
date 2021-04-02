@@ -14,7 +14,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 skiplist_t *r, *e;
 
 	if (list == NULL)
-		return NULL;
+		return (NULL);
 	e = list;
 	r = list;
 	while (r->express != NULL && r->next != NULL)
