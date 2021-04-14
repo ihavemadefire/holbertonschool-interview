@@ -3,6 +3,7 @@
 This module contains a function to count rain.
 """
 
+
 def rain(walls):
     '''This function counts rain'''
     rain = 0
@@ -17,13 +18,13 @@ def rain(walls):
                 if(walls[low] > l_max):
                     l_max = walls[low]
                 else:
-                    rain+= l_max - walls[low]
+                    rain += l_max - walls[low]
                 low += 1
             else:
                 if(walls[high] > r_max):
                     r_max = walls[high]
                 else:
-                    rain+= r_max - walls[high]
+                    rain += r_max - walls[high]
                 high -= 1
             i += 1
         return rain
