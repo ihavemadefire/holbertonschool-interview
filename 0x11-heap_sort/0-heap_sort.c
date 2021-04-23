@@ -23,7 +23,7 @@ void heap_sort(int *array, size_t size)
 }
 
 /**
- * heapify - recusivelty heapifies the heap 
+ * heapify - recusivelty heapifies the heap
  * @array: array to be heapified (and printed)
  * @size: size of array
  * @i: root node of the heap
