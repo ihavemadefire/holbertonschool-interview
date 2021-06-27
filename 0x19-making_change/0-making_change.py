@@ -3,7 +3,7 @@
 
 
 def makeChange(coins, total):
-    """ 
+    """
     this funtion determines the lowest number of coins needed
     to make change given a random pile of coins.
     """
@@ -13,7 +13,7 @@ def makeChange(coins, total):
     count = 0
     i = 0
     sorted_ = sorted(coins, reverse=True)
-    # loop over each coin as long as less than total 
+    # loop over each coin as long as less than total
     while(change < total and i < len(coins)):
         if (change + sorted_[i] <= total):
             change += sorted_[i]
