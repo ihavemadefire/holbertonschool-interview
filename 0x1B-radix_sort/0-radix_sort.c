@@ -7,10 +7,11 @@
  */
 int get_max(int *array, size_t size) {
 
+	int i;
 	int max = array[0];
 	int n = size;
 
-	for (int i = 1; i < n; i++)
+	for (i = 1; i < n; i++)
 		if (array[i] > max)
 			max = array[i];
 	return (max);
