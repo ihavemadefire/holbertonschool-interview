@@ -29,6 +29,10 @@ void radix_sort(int *array, size_t size)
 	int i, j, k, r, NOP = 0, divisor = 1, lar, pass;
 	int n = size;
 
+	if (array == NULL)
+		return;
+	if (size < 2)
+		return;
 	lar = get_max(array, n);
 	while (lar > 0)
 	{
