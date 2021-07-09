@@ -1,10 +1,12 @@
-#ifndef SORT_H
-#define SORT_H
+#ifndef _HOLBERTON_H_
+#define _HOLBERTON_H_
 
+#include <stddef.h>
 #include <stdlib.h>
 
+int _putchar(char);
 void print_array(const int *array, size_t size);
 void radix_sort(int *array, size_t size);
-int get_max(int *array, size_t size);
+void radix_recursive(int *array, size_t size, size_t digit);
 
 #endif

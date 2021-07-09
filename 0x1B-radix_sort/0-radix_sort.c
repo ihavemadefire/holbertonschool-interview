@@ -1,66 +1,62 @@
 #include "sort.h"
 
-/**
- * get_max - Implements the radix sort
- * @array: The array to be sort
- * @size: Number of elements in @array
- * Return: the max
- */
-int get_max(int *array, size_t size)
-{
-	int i;
-	int max = array[0];
-	int n = size;
 
-	for (i = 1; i < n; i++)
-		if (array[i] > max)
-			max = array[i];
-	return (max);
+/**
+ * radix_recursive - A recursive implementation of the radix sort
+ * @array: The array to be sorted
+ * @size: The size of the array to be sorted
+ * @digit: the current digit to sort by
+ */
+void radix_recursive(int *array, size_t size, size_t digit)
+{
+	size_t i = 0, j = 0;
+	size_t digits[10] = {0};
+	int *rads[10];
+	int tmp, count;
+
+	for (i = 0; i < size; i++)
+	{
+		tmp = (array[i] % digit) / (digit / 10);
+		digits[tmp] = digits[tmp] + 1;
+	}
+	if (digits[0] == size)
+		return;
+	for (i = 0; i < 10; i++)
+		rads[i] = malloc(digits[i] * sizeof(int));
+	for (i = 0; i < 10; i++)
+	{
+		count = 0;
+		for (j = 0; j < size; j++)
+			if (((array[j] % digit) / (digit / 10)) == i)
+			{
+				rads[i][count] = array[j];
+				count++;
+			}
+	}
+	count = 0;
+	for (i = 0; i < 10; i++)
+		for (j = 0; j < digits[i]; j++)
+		{
+			array[count] = rads[i][j];
+			count++;
+		}
+	print_array((const int *)array, size);
+	for (i = 0; i < 10; i++)
+		free(rads[i]);
+	radix_recursive(array, size, digit * 10);
 }
 
+
 /**
- * radix_sort - Implements the radix sort
- * @array: The array to be sort
- * @size: Number of elements in @array
+ * radix_sort - Wrapper funtion for radix sort
+ * @array: The array to be sorted
+ * @size: The size of the array to be sorted
  */
 void radix_sort(int *array, size_t size)
 {
-	int bucket[10][10], bucket_cnt[10];
-	int i, j, k, r, NOP = 0, divisor = 1, lar, pass;
-	int n = size;
-
 	if (array == NULL)
 		return;
 	if (size < 2)
 		return;
-	lar = get_max(array, n);
-	while (lar > 0)
-	{
-		NOP++;
-		lar /= 10;
-	}
-	for (pass = 0; pass < NOP; pass++)
-	{
-		for (i = 0; i < 10; i++)
-		{
-				bucket_cnt[i] = 0;
-		}
-		for (i = 0; i < n; i++)
-		{
-			r = (array[i] / divisor) % 10;
-			bucket[r][bucket_cnt[r]] = array[i];
-			bucket_cnt[r] += 1;
-		}
-		i = 0;
-		for (k = 0; k < 10; k++)
-		{
-			for (j = 0; j < bucket_cnt[k]; j++)
-			{
-				array[i] = bucket[k][j];
-				i++;
-			}
-		}
-		divisor *= 10;
-		print_array(array, size);
-	}
+	radix_recursive(array, size, 10);
 }
