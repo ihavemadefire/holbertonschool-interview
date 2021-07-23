@@ -28,7 +28,7 @@ int is_avl(const binary_tree_t *root, int min, int max, int *height)
 /**
  * binary_tree_is_avl - checks if a valid AVL Tree
  * @tree: binary tree to be checked
- * Return: 1 if tree is valid AVL Tree, and 0 otherwise
+ * Return: 1 if tree is valid AVL Tree, else 0
  */
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
