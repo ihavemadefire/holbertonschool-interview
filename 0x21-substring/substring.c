@@ -59,10 +59,10 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
  * @s: passed string
  * @words: passed array of words
  * @nb_words: length of array words
- * @word_len: the length of each word
+ * @word_ln: the length of each word
  * Return: 1 if match of substring made of 'words' exists, or 0
  */
-int match_search(char const *s, char const **words, int nb_words, int word_len)
+int match_search(char const *s, char const **words, int nb_words, int word_ln)
 {
 	int *comp;
 	int comp_len = 0;
@@ -80,7 +80,7 @@ int match_search(char const *s, char const **words, int nb_words, int word_len)
 		for (k = 0; k < nb_words; k++)
 		{
 			m = in_string(comp, comp_len, k);
-			if (m && string_match((s + (j * word_len)), words[k]))
+			if (m && string_match((s + (j * word_ln)), words[k]))
 			{
 				comp[comp_len] = k;
 				comp_len++;
